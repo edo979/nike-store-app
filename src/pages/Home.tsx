@@ -1,3 +1,11 @@
+import { Container, Row } from 'react-bootstrap'
+
 export function Home() {
-  return <h1>Home page</h1>
+  return (
+    <Container>
+      <Row>
+        <h1>The App</h1>
+      </Row>
+    </Container>
+  )
 }
