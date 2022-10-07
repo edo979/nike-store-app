@@ -3,7 +3,7 @@ import logo from '../assets/logo.png'
 
 export function MainNavigation() {
   return (
-    <Navbar bg="light" color="dark" expand="sm" className="shadow-sm">
+    <Navbar expand="sm" className="mt-2 mb-4 py-0">
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} width={60} style={{ filter: 'brightness(0)' }} />
