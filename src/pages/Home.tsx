@@ -6,10 +6,11 @@ export function Home() {
     <>
       <header>
         <MainNavigation />
+        <div className="clip-path"></div>
 
-        <Container className="mt-5 pb-5">
+        <Container className="hero | mt-5 pb-5">
           <Stack gap={5} className="col-sm-8 mx-auto">
-            <h1 className="text-bg-primary text-center display-4">
+            <h1 className="text-light text-center display-4">
               Play With Electric Nike Adapt 2.0 Sneakers
             </h1>
             <Button

@@ -66,14 +66,30 @@
 }
 
 header {
-  background-color: $primary;
+  position: relative;
 
-  img {
-    rotate: -20deg;
-    transition: 0.3s rotate cubic-bezier(0.075, 0.82, 0.165, 1);
+  .clip-path {
+    position: absolute;
+    inset: 0;
 
-    &:is(:hover) {
-      rotate: 0deg;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+
+    @include gradient-directional(
+      $start-color: $blue,
+      $end-color: $teal,
+      $deg: 160deg
+    );
+    z-index: -1;
+  }
+
+  .hero {
+    img {
+      rotate: -20deg;
+      transition: 0.3s rotate cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      &:is(:hover) {
+        rotate: 0deg;
+      }
     }
   }
 }
