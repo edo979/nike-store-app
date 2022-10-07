@@ -66,6 +66,14 @@
 }
 
 header {
-  height: 150vh;
   background-color: $primary;
+
+  img {
+    rotate: -20deg;
+    transition: 0.3s rotate cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    &:is(:hover) {
+      rotate: 0deg;
+    }
+  }
 }
