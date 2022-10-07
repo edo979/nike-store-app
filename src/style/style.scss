@@ -35,17 +35,32 @@
 // 8. Add additional custom code here
 .navbar {
   top: 0.75rem;
+  margin-bottom: 2rem;
   padding-block: 0;
+
   transition: 0.25s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   transition-property: top;
-  margin-bottom: 2rem;
+
+  .btn {
+    background-color: transparent;
+    border: none;
+  }
 
   &.sticky-top {
     top: 0;
     padding-block: 1rem;
+
     backdrop-filter: blur(8px);
     background-color: #ffffff80;
     box-shadow: 0 0 15px 5px hsl(0, 0%, 80%, 0.5),
       0 0 5px 2px hsl(0, 0%, 80%, 0.25);
+
+    .navbar-brand img {
+      filter: brightness(0);
+    }
+
+    .btn {
+      color: black;
+    }
   }
 }
