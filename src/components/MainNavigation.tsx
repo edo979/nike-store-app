@@ -1,9 +1,12 @@
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import logo from '../assets/logo.png'
+import { useScrollPosition } from '../hooks/useScrollPosition'
 
 export function MainNavigation() {
+  const scrollPosition = useScrollPosition()
+
   return (
-    <Navbar expand="sm" className="mt-2 mb-4 py-0">
+    <Navbar expand="sm" sticky={scrollPosition > 30 ? 'top' : undefined}>
       <Container>
         <Navbar.Brand href="#home">
           <img src={logo} width={60} style={{ filter: 'brightness(0)' }} />
