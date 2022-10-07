@@ -1,5 +1,4 @@
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap'
-import logo from '../assets/logo.png'
+import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { useScrollPosition } from '../hooks/useScrollPosition'
 
 export function MainNavigation() {
@@ -9,7 +8,7 @@ export function MainNavigation() {
     <Navbar expand="sm" sticky={scrollPosition > 30 ? 'top' : undefined}>
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logo} width={60} />
+          <img src="/assets/logo.png" width={60} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar" />
         <Navbar.Collapse id="navbar">

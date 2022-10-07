@@ -5,7 +5,6 @@ import './style/style.scss'
 function App() {
   return (
     <>
-      <MainNavigation />
       <Home />
     </>
   )
