@@ -1,4 +1,4 @@
-import { Card, Row, Col, Stack, Button } from 'react-bootstrap'
+import { Card, Row, Col } from 'react-bootstrap'
 import { CardDetails } from './CardDetails'
 
 type CardV1Props = {
