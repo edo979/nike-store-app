@@ -77,8 +77,8 @@ header {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
 
     @include gradient-directional(
-      $start-color: $blue,
-      $end-color: $teal,
+      $start-color: $blue-300,
+      $end-color: $blue,
       $deg: 160deg
     );
     z-index: -1;

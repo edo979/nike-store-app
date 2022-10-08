@@ -37,13 +37,13 @@ export function Home() {
 
       <main>
         <Container className="">
-          <Row className="my-2">
+          <Row className="my-2 mt-lg-5">
             <Col>
               <h2>Popular Sales</h2>
             </Col>
           </Row>
 
-          <Row xs={1} sm={2} lg={3} className="g-3">
+          <Row xs={1} sm={2} lg={3} className="g-4 g-sm-3 g-md-4">
             {shoes.map((s) => {
               if (s.id.includes('p')) {
                 return (
