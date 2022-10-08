@@ -52,7 +52,7 @@ export function Home() {
             </Col>
           </Row>
 
-          <Row xs={1} sm={2} lg={3} className="g-4 g-sm-3 g-md-4">
+          <Row xs={1} sm={2} lg={4} className="g-4 g-sm-3 g-md-4">
             <CardV2List />
           </Row>
 

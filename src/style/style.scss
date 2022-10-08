@@ -98,14 +98,14 @@ header {
 
 .card-v1 {
   @include gradient-directional(
-    $start-color: var(--clr-top-card-v1, $blue),
-    $end-color: var(--clr-bottom-card-v1, $teal),
+    $start-color: var(--clr-top-card, $blue),
+    $end-color: var(--clr-bottom-card, $teal),
     $deg: 180deg
   );
 
-  border: var(--clr-top-card-v1, $blue);
-  box-shadow: 0 4px 8px var(--clr-bottom-card-v1, $teal),
-    0 1px 2px var(--clr-bottom-card-v1, $teal);
+  border: var(--clr-top-card, $blue);
+  box-shadow: 0 4px 8px var(--clr-bottom-card, $teal),
+    0 1px 2px var(--clr-bottom-card, $teal);
 
   .card-body {
     position: relative;
@@ -113,5 +113,21 @@ header {
 
   .card-img {
     rotate: -15deg;
+  }
+}
+
+.card-v2 {
+  @include gradient-directional(
+    $start-color: var(--clr-top-card, $blue),
+    $end-color: var(--clr-bottom-card, $teal),
+    $deg: 180deg
+  );
+
+  border: var(--clr-top-card, $blue);
+  box-shadow: 0 4px 8px var(--clr-bottom-card, $teal),
+    0 1px 2px var(--clr-bottom-card, $teal);
+
+  .card-img {
+    rotate: 10deg;
   }
 }

@@ -1,6 +1,6 @@
 import { Col } from 'react-bootstrap'
 import { shoes } from '../../data/shoes'
-import { CardV1 } from './CardV1'
+import { CardV2 } from './CardV2'
 
 export function CardV2List() {
   return (
@@ -9,7 +9,7 @@ export function CardV2List() {
         if (s.id.includes('M')) {
           return (
             <Col key={s.id}>
-              <CardV1 {...s} />
+              <CardV2 {...s} />
             </Col>
           )
         }

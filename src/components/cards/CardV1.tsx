@@ -23,8 +23,8 @@ export function CardV1({
   color2,
 }: CardV1Props) {
   const colors = {
-    '--clr-top-card-v1': color1,
-    '--clr-bottom-card-v1': color2,
+    '--clr-top-card': color1,
+    '--clr-bottom-card': color2,
   } as React.CSSProperties
 
   return (
