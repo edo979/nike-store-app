@@ -20,14 +20,22 @@ export function Jumbotron({
 
   return (
     <>
-      <Col className={`${isImageLeft ? 'order-1' : 'order-0'}`}>
-        <p className="mb-0 fw-bold text-primary fs-4">{heading}</p>
-        <h2 className="fs-1 fw-bold">{title}</h2>
+      <Col
+        md={6}
+        lg={5}
+        className={`${isImageLeft ? 'order-1 mt-3 mt-md-0' : 'order-0'}`}
+      >
+        <p className=" mb-0 fw-bold text-primary fs-2">{heading}</p>
+        <h2 className="display-6 fw-bold">{title}</h2>
         <p>{text}</p>
         <Button variant="dark">{btn}</Button>
       </Col>
 
-      <Col className={`${isImageLeft ? 'order-0' : 'order-1'}`}>
+      <Col
+        md={6}
+        lg={7}
+        className={`${isImageLeft ? 'order-0' : 'order-1 mt-3 mt-md-0'}`}
+      >
         <img src={img} alt={title} className="img-fluid" />
       </Col>
     </>

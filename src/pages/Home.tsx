@@ -41,7 +41,7 @@ export function Home() {
             <CardV1List />
           </Row>
 
-          <Row xs={2} className="mt-5">
+          <Row className="mt-5 align-items-center bg-light p-5 rounded-3">
             <Jumbotron {...homeArticles[0]} variant="img-left" />
           </Row>
         </Container>
