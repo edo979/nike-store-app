@@ -1,7 +1,7 @@
 import { Button, Col } from 'react-bootstrap'
 
 type JumbotronProps = {
-  variant: string
+  variant?: string
   heading: string
   title: string
   text: string
