@@ -36,20 +36,24 @@ export function Home() {
       </header>
 
       <main>
-        <Container>
-          <Row className="my-4">
+        <Container className="">
+          <Row className="my-2">
             <Col>
               <h2>Popular Sales</h2>
             </Col>
           </Row>
-          <Row xs={1} sm={2} lg={3}>
-            <Col>
-              {shoes.map((s) => {
-                if (s.id.includes('p')) {
-                  return <CardV1 {...s} />
-                }
-              })}
-            </Col>
+
+          <Row xs={1} sm={2} lg={3} className="g-3">
+            {shoes.map((s) => {
+              if (s.id.includes('p')) {
+                return (
+                  <Col key={s.id}>
+                    <CardV1 {...s} />
+                  </Col>
+                )
+              }
+              return undefined
+            })}
           </Row>
         </Container>
       </main>

@@ -9,7 +9,7 @@ type CardV1Props = {
 
 export function CardV1({ title, text, rating, img }: CardV1Props) {
   return (
-    <Card className="bg-primary text-white">
+    <Card className="bg-primary text-white h-100">
       <Row>
         <Col xs={6} style={{ zIndex: '1' }}>
           <Card.Body>
