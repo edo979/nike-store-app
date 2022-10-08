@@ -6,7 +6,9 @@ type Shoe = {
   btn: string
   img: string
   price: string
-  color: string
+  color?: string
+  color1?: string
+  color2?: string
   shadow: string
 }
 
@@ -20,6 +22,8 @@ export const shoes: Shoe[] = [
     img: '/assets/nike-adapt-bb.png',
     price: '200',
     color: 'from-blue-600 to-blue-500',
+    color1: 'hsl(225, 100%, 58%)',
+    color2: 'hsl(218, 90%, 59%)',
     shadow: 'shadow-lg shadow-blue-500',
   },
   {
@@ -31,6 +35,8 @@ export const shoes: Shoe[] = [
     img: '/assets/nike-air-red.png',
     price: '200',
     color: 'from-red-500 to-rose-500',
+    color1: 'hsl(360, 84%, 60%)',
+    color2: 'hsl(350, 89%, 60%)',
     shadow: 'shadow-lg shadow-rose-500',
   },
   {
@@ -42,6 +48,8 @@ export const shoes: Shoe[] = [
     img: '/assets/nike-adapt-bb-smart.png',
     price: '200',
     color: 'from-violet-500 to-indigo-500',
+    color1: 'hsl(258, 88%, 66%)',
+    color2: 'hsl(240, 83%, 67%)',
     shadow: 'shadow-lg shadow-violet-500',
   },
   {

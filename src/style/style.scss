@@ -27,6 +27,7 @@
 @import '../node_modules/bootstrap/scss/buttons';
 @import '../node_modules/bootstrap/scss/transitions';
 @import '../node_modules/bootstrap/scss/card';
+@import '../node_modules/bootstrap/scss/badge';
 
 @import '../node_modules/bootstrap/scss/helpers';
 
@@ -92,5 +93,23 @@ header {
         rotate: 0deg;
       }
     }
+  }
+}
+
+.card-v1 {
+  @include gradient-directional(
+    $start-color: var(--clr-top-card-v1, $blue),
+    $end-color: var(--clr-bottom-card-v1, $teal),
+    $deg: 180deg
+  );
+
+  border: var(--clr-top-card-v1, $blue);
+  box-shadow: 0 4px 8px var(--clr-bottom-card-v1, $teal),
+    0 1px 2px var(--clr-bottom-card-v1, $teal);
+
+  .card-img {
+    scale: 1.3;
+    translate: -20% 0;
+    rotate: -30deg;
   }
 }
