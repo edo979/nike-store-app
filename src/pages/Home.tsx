@@ -1,7 +1,9 @@
 import { Button, Col, Container, Image, Row, Stack } from 'react-bootstrap'
 
 import { CardV1List } from '../components/CardV1List'
+import { Jumbotron } from '../components/Jumbotron'
 import { MainNavigation } from '../components/MainNavigation'
+import { homeArticles } from '../data/shoes'
 
 export function Home() {
   return (
@@ -35,7 +37,13 @@ export function Home() {
             </Col>
           </Row>
 
-          <CardV1List />
+          <Row xs={1} sm={2} lg={3} className="g-4 g-sm-3 g-md-4">
+            <CardV1List />
+          </Row>
+
+          <Row xs={2} className="mt-5">
+            <Jumbotron {...homeArticles[0]} variant="img-left" />
+          </Row>
         </Container>
       </main>
     </>
