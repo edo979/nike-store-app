@@ -61,6 +61,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product7.png',
     price: '150',
     color: 'from-sky-600 to-indigo-600',
+    color1: 'hsl(243, 73%, 58%)',
+    color2: 'hsl(243, 75%, 59%)',
     shadow: 'shadow-lg shadow-blue-500',
   },
   {
@@ -72,6 +74,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product2.png',
     price: '150',
     color: 'from-green-500 to-emerald-500',
+    color1: 'hsl(142, 71%, 45%)',
+    color2: 'hsl(160, 84%, 39%)',
     shadow: 'shadow-lg shadow-green-500',
   },
   {
@@ -83,6 +87,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product3.png',
     price: '150',
     color: 'from-red-500 to-rose-500',
+    color1: 'hsl(0, 84%, 60%)',
+    color2: 'hsl(350, 89%, 60%)',
     shadow: 'shadow-lg shadow-rose-500',
   },
   {
@@ -94,6 +100,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product4.png',
     price: '150',
     color: 'from-orange-500 to-amber-500',
+    color1: 'hsl(25, 95%, 53%)',
+    color2: 'hsl(37, 92%, 50%)',
     shadow: 'shadow-lg shadow-orange-500',
   },
   {
@@ -105,6 +113,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product5.png',
     price: '150',
     color: 'from-gray-900 to-yellow-500',
+    color1: 'hsl(216, 16%, 13%)',
+    color2: 'hsl(45, 92%, 46%)',
     shadow: 'shadow-lg shadow-yellow-500',
   },
   {
@@ -116,6 +126,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product6.png',
     price: '150',
     color: 'from-blue-500 to-cyan-500',
+    color1: 'hsl(216, 90%, 59%)',
+    color2: 'hsl(189, 94%, 43%)',
     shadow: 'shadow-lg shadow-cyan-500',
   },
   {
@@ -127,6 +139,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product1.png',
     price: '150',
     color: 'from-yellow-500 to-yellow-500',
+    color1: 'hsl(45, 93%, 47%)',
+    color2: 'hsl(45, 93%, 47%)',
     shadow: 'shadow-lg shadow-yellow-500',
   },
   {
@@ -138,6 +152,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product9.png',
     price: '150',
     color: 'from-[#936550] to-orange-900',
+    color1: 'hsl(19, 30%, 45%)',
+    color2: 'hsl(15, 75%, 28%)',
     shadow: 'shadow-lg shadow-orange-800',
   },
   {
@@ -149,6 +165,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product10.png',
     price: '150',
     color: 'from-indigo-700 to-indigo-700',
+    color1: 'hsl(245, 58%, 51%)',
+    color2: 'hsl(245, 58%, 51%)',
     shadow: 'shadow-lg shadow-indigo-500',
   },
   {
@@ -160,6 +178,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product12.png',
     price: '150',
     color: 'from-green-600 to-lime-500',
+    color1: 'hsl(142, 76%, 36%)',
+    color2: 'hsl(84, 81%, 44%)',
     shadow: 'shadow-lg shadow-lime-500',
   },
   {
@@ -171,6 +191,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product11.png',
     price: '150',
     color: 'from-slate-900 to-black',
+    color1: 'hsl(222, 47%, 11%)',
+    color2: 'hsl(0, 0%, 0%)',
     shadow: 'shadow-lg shadow-black',
   },
   {
@@ -182,6 +204,8 @@ export const shoes: Shoe[] = [
     img: '/assets/product8.png',
     price: '150',
     color: 'from-blue-900 to-blue-500',
+    color1: 'hsl(224, 64%, 33%)',
+    color2: 'hsl(217, 90%, 60%)',
     shadow: 'shadow-lg shadow-blue-500',
   },
 ]
