@@ -29,7 +29,7 @@ export function CardV2({
 
   return (
     <Card className="card-v2 | text-white h-100" style={{ ...colors }}>
-      <Card.Body className="text-nowrap">
+      <Card.Body className="text-sm-center text-end pb-0">
         <Card.Title className="mb-0">
           <h3 className="fs-6 mb-0">{title}</h3>
         </Card.Title>
@@ -37,7 +37,7 @@ export function CardV2({
         <Card.Text as={'div'}>
           <p className="mb-0 fs-6">{text}</p>
 
-          <CardDetails price={price} rating={rating} btn={btn} />
+          <CardDetails price={price} rating={rating} btn={btn} center={true} />
         </Card.Text>
       </Card.Body>
 

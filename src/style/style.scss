@@ -127,6 +127,10 @@ header {
   box-shadow: 0 6px 10px var(--clr-top-card, $teal),
     0 6px 4px -5px var(--clr-top-card, $teal);
 
+  .card-body {
+    z-index: 1;
+  }
+
   .card-img {
     rotate: 10deg;
   }

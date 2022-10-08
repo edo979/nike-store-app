@@ -4,11 +4,16 @@ type CardDetailsProps = {
   price: string
   rating: string
   btn: string
+  center: boolean
 }
 
-export function CardDetails({ price, rating, btn }: CardDetailsProps) {
+export function CardDetails({ price, rating, btn, center }: CardDetailsProps) {
   return (
-    <Stack style={{ width: '100px' }} gap={1} className="mt-2">
+    <Stack
+      style={{ width: '100px' }}
+      gap={1}
+      className={`${center && 'mx-sm-auto ms-auto'} mt-2`}
+    >
       <Stack direction="horizontal" className="justify-content-between">
         <span className="badge bg-light text-dark">${price} </span>
         <Stack direction="horizontal">
@@ -30,7 +35,7 @@ export function CardDetails({ price, rating, btn }: CardDetailsProps) {
         </Stack>
       </Stack>
 
-      <Stack direction="horizontal" className="justify-content-between">
+      <Stack direction="horizontal" className="justify-content-between ">
         <Button variant="light" size="sm" className="py-0 px-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
