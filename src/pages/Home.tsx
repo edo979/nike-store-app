@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap'
 import { CardV1 } from '../components/CardV1'
 import { MainNavigation } from '../components/MainNavigation'
+import { shoes } from '../data/shoes.js'
 
 export function Home() {
   return (
@@ -43,7 +44,11 @@ export function Home() {
           </Row>
           <Row xs={1} sm={2} lg={3}>
             <Col>
-              <CardV1 />
+              {shoes.map((s) => {
+                if (s.id.includes('p')) {
+                  return <CardV1 {...s} />
+                }
+              })}
             </Col>
           </Row>
         </Container>

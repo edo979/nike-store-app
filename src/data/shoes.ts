@@ -1,11 +1,23 @@
-export const shoes = [
+type Shoe = {
+  id: string
+  title: string
+  text: string
+  rating: string
+  btn: string
+  img: string
+  price: string
+  color: string
+  shadow: string
+}
+
+export const shoes: Shoe[] = [
   {
     id: '0p0x1',
     title: 'Nike Addapt BB 2.0',
     text: 'MEN Running Shoes',
     rating: '4.9',
     btn: 'Buy Now',
-    img: psale2,
+    img: '/assets/nike-adapt-bb.png',
     price: '200',
     color: 'from-blue-600 to-blue-500',
     shadow: 'shadow-lg shadow-blue-500',
@@ -16,7 +28,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '4.5',
     btn: 'Buy Now',
-    img: psale1,
+    img: '/assets/nike-air-red.png',
     price: '200',
     color: 'from-red-500 to-rose-500',
     shadow: 'shadow-lg shadow-rose-500',
@@ -27,7 +39,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: psale3,
+    img: '/assets/nike-adapt-bb-smart.png',
     price: '200',
     color: 'from-violet-500 to-indigo-500',
     shadow: 'shadow-lg shadow-violet-500',
@@ -38,7 +50,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product7,
+    img: '/assets/product7.png',
     price: '150',
     color: 'from-sky-600 to-indigo-600',
     shadow: 'shadow-lg shadow-blue-500',
@@ -49,7 +61,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product2,
+    img: '/assets/product2.png',
     price: '150',
     color: 'from-green-500 to-emerald-500',
     shadow: 'shadow-lg shadow-green-500',
@@ -60,7 +72,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product3,
+    img: '/assets/product3.png',
     price: '150',
     color: 'from-red-500 to-rose-500',
     shadow: 'shadow-lg shadow-rose-500',
@@ -71,7 +83,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product4,
+    img: '/assets/product4.png',
     price: '150',
     color: 'from-orange-500 to-amber-500',
     shadow: 'shadow-lg shadow-orange-500',
@@ -82,7 +94,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product5,
+    img: '/assets/product5.png',
     price: '150',
     color: 'from-gray-900 to-yellow-500',
     shadow: 'shadow-lg shadow-yellow-500',
@@ -93,7 +105,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product6,
+    img: '/assets/product6.png',
     price: '150',
     color: 'from-blue-500 to-cyan-500',
     shadow: 'shadow-lg shadow-cyan-500',
@@ -104,7 +116,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product1,
+    img: '/assets/product1.png',
     price: '150',
     color: 'from-yellow-500 to-yellow-500',
     shadow: 'shadow-lg shadow-yellow-500',
@@ -115,7 +127,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product9,
+    img: '/assets/product9.png',
     price: '150',
     color: 'from-[#936550] to-orange-900',
     shadow: 'shadow-lg shadow-orange-800',
@@ -126,7 +138,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product10,
+    img: '/assets/product10.png',
     price: '150',
     color: 'from-indigo-700 to-indigo-700',
     shadow: 'shadow-lg shadow-indigo-500',
@@ -137,7 +149,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product12,
+    img: '/assets/product12.png',
     price: '150',
     color: 'from-green-600 to-lime-500',
     shadow: 'shadow-lg shadow-lime-500',
@@ -148,7 +160,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product11,
+    img: '/assets/product11.png',
     price: '150',
     color: 'from-slate-900 to-black',
     shadow: 'shadow-lg shadow-black',
@@ -159,7 +171,7 @@ export const shoes = [
     text: 'MEN Running Shoes',
     rating: '5+',
     btn: 'Buy Now',
-    img: product8,
+    img: '/assets/product8.png',
     price: '150',
     color: 'from-blue-900 to-blue-500',
     shadow: 'shadow-lg shadow-blue-500',
