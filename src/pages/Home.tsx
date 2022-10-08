@@ -1,6 +1,7 @@
 import { Button, Col, Container, Image, Row, Stack } from 'react-bootstrap'
 
 import { CardV1List } from '../components/cards/CardV1List'
+import { CardV2List } from '../components/cards/CardV2List'
 import { Jumbotron } from '../components/Jumbotron'
 import { MainNavigation } from '../components/MainNavigation'
 import { homeArticles } from '../data/shoes'
@@ -52,7 +53,7 @@ export function Home() {
           </Row>
 
           <Row xs={1} sm={2} lg={3} className="g-4 g-sm-3 g-md-4">
-            <CardV1List />
+            <CardV2List />
           </Row>
 
           <Row className="mt-5 align-items-center bg-light p-5 rounded-3">
