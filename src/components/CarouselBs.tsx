@@ -17,7 +17,7 @@ export function CarouselBs() {
 
   return (
     <>
-      <div className="d-md-none my-5">
+      <div className="d-md-none">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
@@ -32,7 +32,7 @@ export function CarouselBs() {
         </Carousel>
       </div>
 
-      <div className="d-none d-md-block d-lg-none my-5">
+      <div className="d-none d-md-block d-lg-none">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
@@ -55,7 +55,7 @@ export function CarouselBs() {
         </Carousel>
       </div>
 
-      <div className="d-none d-lg-block d-xl-none my-5">
+      <div className="d-none d-lg-block d-xl-none">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
@@ -79,7 +79,7 @@ export function CarouselBs() {
         </Carousel>
       </div>
 
-      <div className="d-none d-xl-block my-5">
+      <div className="d-none d-xl-block">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
