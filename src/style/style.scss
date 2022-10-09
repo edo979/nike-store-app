@@ -115,6 +115,12 @@ header {
   .card-img {
     rotate: -15deg;
   }
+
+  &:is(:hover, :focus) {
+    .card-img {
+      rotate: -10deg;
+    }
+  }
 }
 
 .card-v2 {
@@ -134,5 +140,26 @@ header {
 
   .card-img {
     rotate: 10deg;
+  }
+
+  &:is(:hover, :focus) {
+    .card-img {
+      rotate: 15deg;
+    }
+  }
+}
+
+.card-v2,
+.card-v1 {
+  transition: scale 0.23s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+
+  .card-img {
+    transition: rotate 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  &:is(:hover, :focus) {
+    scale: 1.055;
+    z-index: 2;
   }
 }
