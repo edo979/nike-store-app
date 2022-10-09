@@ -39,7 +39,12 @@ export function CardV1({
             <Card.Text as={'div'}>
               <p className="mb-0 fs-6">{text}</p>
 
-              <CardDetails price={price} rating={rating} btn={btn} />
+              <CardDetails
+                price={price}
+                rating={rating}
+                btn={btn}
+                center={false}
+              />
             </Card.Text>
           </Card.Body>
         </Col>
