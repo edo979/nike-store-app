@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import { Button, Card, CardGroup, Stack } from 'react-bootstrap'
+import { CardGroup } from 'react-bootstrap'
 import Carousel from 'react-bootstrap/Carousel'
-import { news } from '../data/shoes'
 import { CarouselItem } from './CarouselItem'
+import { news, News } from '../data/shoes'
+
+function chunks(arr: News[], size = 2): (false | News[])[] {
+  return arr.map((x, i) => i % size == 0 && arr.slice(i, i + size))
+}
 
 export function CarouselBs() {
   const [index, setIndex] = useState<number>(0)
@@ -13,7 +17,7 @@ export function CarouselBs() {
 
   return (
     <>
-      <div className="d-md-none">
+      <div className="d-md-none my-5">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
@@ -28,29 +32,75 @@ export function CarouselBs() {
         </Carousel>
       </div>
 
-      <div className="d-none d-md-block">
+      <div className="d-none d-md-block d-lg-none my-5">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
           variant="dark"
           className="pb-5 mb-2"
         >
-          {news
-            .reduce(
-              (result, value, index, sourceArray) =>
-                index % 2 === 0
-                  ? [...result, sourceArray.slice(index, index + 2)]
-                  : result,
-              []
-            )
-            .map((items) => (
-              <Carousel.Item key={items[0].title}>
-                <CardGroup>
-                  <CarouselItem {...items[0]} />
-                  <CarouselItem {...items[1]} />
-                </CardGroup>
-              </Carousel.Item>
-            ))}
+          {chunks(news).map((items, i) => {
+            if (items) {
+              return (
+                <Carousel.Item key={items ? items[0].title : i}>
+                  <CardGroup>
+                    <CarouselItem {...items[0]} />
+                    <CarouselItem {...items[1]} />
+                  </CardGroup>
+                </Carousel.Item>
+              )
+            }
+            return undefined
+          })}
+        </Carousel>
+      </div>
+
+      <div className="d-none d-lg-block d-xl-none my-5">
+        <Carousel
+          activeIndex={index}
+          onSelect={handleSelect}
+          variant="dark"
+          className="pb-5 mb-2"
+        >
+          {chunks(news, 3).map((items, i) => {
+            if (items) {
+              return (
+                <Carousel.Item key={items ? items[0].title : i}>
+                  <CardGroup>
+                    <CarouselItem {...items[0]} />
+                    <CarouselItem {...items[1]} />
+                    <CarouselItem {...items[2]} />
+                  </CardGroup>
+                </Carousel.Item>
+              )
+            }
+            return undefined
+          })}
+        </Carousel>
+      </div>
+
+      <div className="d-none d-xl-block my-5">
+        <Carousel
+          activeIndex={index}
+          onSelect={handleSelect}
+          variant="dark"
+          className="pb-5 mb-2"
+        >
+          {chunks(news, 4).map((items, i) => {
+            if (items) {
+              return (
+                <Carousel.Item key={items ? items[0].title : i}>
+                  <CardGroup>
+                    <CarouselItem {...items[0]} />
+                    <CarouselItem {...items[1]} />
+                    <CarouselItem {...items[2]} />
+                    <CarouselItem {...items[3]} />
+                  </CardGroup>
+                </Carousel.Item>
+              )
+            }
+            return undefined
+          })}
         </Carousel>
       </div>
     </>

@@ -1,4 +1,4 @@
-type Shoe = {
+export type Shoe = {
   id: string
   title: string
   text: string
@@ -10,6 +10,17 @@ type Shoe = {
   color1?: string
   color2?: string
   shadow: string
+}
+
+export type News = {
+  title: string
+  text: string
+  img: string
+  url: string
+  like: string
+  time: string
+  by: string
+  btn: string
 }
 
 export const shoes: Shoe[] = [
@@ -229,7 +240,7 @@ export const homeArticles = [
   },
 ]
 
-export const news = [
+export const news: News[] = [
   {
     title: 'Jayson Tatum Debuts',
     text: 'Jordan Brands signature model for the past few years, Jayson Tatum will be dawning the Air Jordan 37 this season before attaining potentially his first signature sneaker with Jumpman, which he rumored to be in the works recently via his Twitter.',
