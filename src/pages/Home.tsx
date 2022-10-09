@@ -66,17 +66,19 @@ export function Home() {
           </Row>
         </main>
 
-        <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-4 border-top">
-          <div className="col mb-3">
+        <footer className="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-4 border-top bg-light">
+          <div className="col mb-3 px-5">
             <a
               href="/"
               className="d-flex align-items-center mb-3 link-dark text-decoration-none"
             >
-              {/* <svg className="bi me-2" width="40" height="32">
-              <use xlink:href="#bootstrap"></use>
-            </svg> */}
+              <img
+                src="/assets/logo.png"
+                width={60}
+                style={{ filter: 'brightness(0)' }}
+              />
             </a>
-            <p className="text-muted">© 2022</p>
+            <p className="text-muted">© {new Date().getFullYear()}</p>
           </div>
 
           <div className="col mb-3"></div>
