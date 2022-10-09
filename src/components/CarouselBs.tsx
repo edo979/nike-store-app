@@ -13,7 +13,7 @@ export function CarouselBs() {
 
   return (
     <>
-      <div className="d-sm-none">
+      <div className="d-md-none">
         <Carousel
           activeIndex={index}
           onSelect={handleSelect}
@@ -25,6 +25,32 @@ export function CarouselBs() {
               <CarouselItem {...item} />
             </Carousel.Item>
           ))}
+        </Carousel>
+      </div>
+
+      <div className="d-none d-md-block">
+        <Carousel
+          activeIndex={index}
+          onSelect={handleSelect}
+          variant="dark"
+          className="pb-5 mb-2"
+        >
+          {news
+            .reduce(
+              (result, value, index, sourceArray) =>
+                index % 2 === 0
+                  ? [...result, sourceArray.slice(index, index + 2)]
+                  : result,
+              []
+            )
+            .map((items) => (
+              <Carousel.Item key={items[0].title}>
+                <CardGroup>
+                  <CarouselItem {...items[0]} />
+                  <CarouselItem {...items[1]} />
+                </CardGroup>
+              </Carousel.Item>
+            ))}
         </Carousel>
       </div>
     </>
