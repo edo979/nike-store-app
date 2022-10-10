@@ -1,4 +1,4 @@
-import { Row, Col, Image, Container } from 'react-bootstrap'
+import { Image, Stack, Button } from 'react-bootstrap'
 import { shoes } from '../data/shoes'
 
 type CartItemProps = {
@@ -11,25 +11,28 @@ export function CartItem({ id, amount }: CartItemProps) {
   if (item == null) return null
 
   return (
-    <Container>
-      <Row className="bg-light p-2 rounded-2">
-        <Col>
-          <Image src={item.img} height={80} className="mx-auto d-block" />
-        </Col>
+    <Stack className="bg-light rounded-2 p-2" direction="horizontal">
+      <Image src={item.img} width={95} />
 
-        <Col className="d-flex align-items-center">
-          <div className="mx-auto">
-            <h2 className="fs-6">{item.title}</h2>
-            <strong>${item.price}</strong>
-            {amount && (
-              <span>
-                <span className="text-muted"> x {amount} = </span>
-                <strong>${parseFloat(item.price) * amount}</strong>
-              </span>
-            )}
-          </div>
-        </Col>
-      </Row>
-    </Container>
+      <div className="ms-auto">
+        <h2 className="fs-6 m-0">{item.title}</h2>
+        <strong>${item.price}</strong>
+        {amount && (
+          <span>
+            <span className="text-muted"> x {amount} = </span>
+            <strong>${parseFloat(item.price) * amount}</strong>
+          </span>
+        )}
+        <div className="mt-1 text-center">
+          <Button size="sm" className="py-0 px-2" variant="outline-dark">
+            &#8211;
+          </Button>
+          <span> amount </span>
+          <Button size="sm" className="py-0 px-2" variant="outline-dark">
+            +
+          </Button>
+        </div>
+      </div>
+    </Stack>
   )
 }
