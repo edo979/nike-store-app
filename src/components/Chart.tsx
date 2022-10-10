@@ -1,35 +1,26 @@
+import { useState } from 'react'
+import { Offcanvas } from 'react-bootstrap'
+
 export function Chart() {
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+
   return (
     <>
-      <button
-        className="btn btn-primary"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight"
-      >
-        Toggle right offcanvas
+      <button className="btn btn-primary" onClick={() => handleShow()}>
+        Chart
       </button>
-
-      <div
-        className="offcanvas offcanvas-end"
-        tabIndex={-1}
-        id="offcanvasRight"
-        aria-labelledby="offcanvasRightLabel"
-      >
-        <div className="offcanvas-header">
-          <h5 className="offcanvas-title" id="offcanvasRightLabel">
-            Offcanvas right
-          </h5>
-          <button
-            type="button"
-            className="btn-close"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div className="offcanvas-body">...</div>
-      </div>
+      <Offcanvas show={show} onHide={handleClose} placement={'end'}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Some text as placeholder. In real life you can have the elements you
+          have chosen. Like, text, images, lists, etc.
+        </Offcanvas.Body>
+      </Offcanvas>
     </>
   )
 }

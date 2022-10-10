@@ -3,6 +3,7 @@ import { Button, Col, Container, Image, Row, Stack } from 'react-bootstrap'
 import { CardV1List } from '../components/cards/CardV1List'
 import { CardV2List } from '../components/cards/CardV2List'
 import { CarouselBs } from '../components/CarouselBs'
+import { Chart } from '../components/Chart'
 import { Jumbotron } from '../components/Jumbotron'
 import { MainNavigation } from '../components/MainNavigation'
 import { homeArticles } from '../data/shoes'
@@ -33,6 +34,8 @@ export function Home() {
 
       <Container>
         <main>
+          <Chart />
+
           <Row className="my-2 mt-lg-5">
             <Col>
               <h2>Popular Sales</h2>
