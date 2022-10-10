@@ -1,4 +1,5 @@
 import { Stack, Button } from 'react-bootstrap'
+import { useCart } from '../../context/CartContext'
 
 type CardDetailsProps = {
   price: string
@@ -8,6 +9,8 @@ type CardDetailsProps = {
 }
 
 export function CardDetails({ price, rating, btn, center }: CardDetailsProps) {
+  const { openCart } = useCart()
+
   return (
     <Stack
       style={{ width: '100px' }}
@@ -36,7 +39,12 @@ export function CardDetails({ price, rating, btn, center }: CardDetailsProps) {
       </Stack>
 
       <Stack direction="horizontal" className="justify-content-between ">
-        <Button variant="light" size="sm" className="py-0 px-0">
+        <Button
+          variant="light"
+          size="sm"
+          className="py-0 px-0"
+          onClick={openCart}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

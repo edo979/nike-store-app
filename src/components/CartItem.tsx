@@ -11,7 +11,7 @@ export function CartItem({ id, amount }: CartItemProps) {
   if (item == null) return null
 
   return (
-    <Stack className="bg-light rounded-2 p-2" direction="horizontal">
+    <Stack className="bg-light rounded-2 p-2 shadow-sm" direction="horizontal">
       <Image src={item.img} width={95} />
 
       <div className="ms-auto">

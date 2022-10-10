@@ -26,6 +26,8 @@ export function CartProvider({ children }: CartProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [cartItems, setCartItems] = useState<CartItem[]>([
     { id: '0p0x1', amount: 2 },
+    { id: '0p0x2', amount: 1 },
+    { id: '0p0x3', amount: 2 },
   ])
 
   const openCart = () => setIsOpen(true)

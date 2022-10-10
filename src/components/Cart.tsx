@@ -24,7 +24,7 @@ export function Cart({ isOpen }: CartProps) {
         <Offcanvas.Title>Total: ${total}</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className="border-top border-2">
-        <Stack gap={2}>
+        <Stack gap={3}>
           {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
           ))}
