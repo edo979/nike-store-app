@@ -1,18 +1,16 @@
-import { useState } from 'react'
 import { Offcanvas } from 'react-bootstrap'
+import { useCart } from '../context/CartContext'
 
-export function Chart() {
-  const [show, setShow] = useState(false)
+type CartProps = {
+  isOpen: boolean
+}
 
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+export function Cart({ isOpen }: CartProps) {
+  const { closeCart } = useCart()
 
   return (
     <>
-      <button className="btn btn-primary" onClick={() => handleShow()}>
-        Chart
-      </button>
-      <Offcanvas show={show} onHide={handleClose} placement={'end'}>
+      <Offcanvas show={isOpen} onHide={closeCart} placement={'end'}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Offcanvas</Offcanvas.Title>
         </Offcanvas.Header>
