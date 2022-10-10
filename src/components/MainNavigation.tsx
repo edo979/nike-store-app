@@ -28,14 +28,11 @@ export function MainNavigation() {
             </svg>
           </Button>
 
-          <Button
-            onClick={openCart}
-            style={{ width: '3rem', height: '3rem', position: 'relative' }}
-            variant="outline-secondary"
-            className="rounded-circle"
-          >
+          <Button onClick={openCart}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
               viewBox="0 0 576 512"
               fill="currentColor"
             >
