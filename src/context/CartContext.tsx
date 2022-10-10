@@ -1,6 +1,11 @@
 import { createContext, ReactNode, useContext, useState } from 'react'
 import { Cart } from '../components/Cart'
 
+type CartItem = {
+  id: string
+  amount: number
+}
+
 type CartProviderProps = {
   children: ReactNode
 }
@@ -8,6 +13,7 @@ type CartProviderProps = {
 type CartContext = {
   openCart: () => void
   closeCart: () => void
+  cartItems: CartItem[]
 }
 
 const CartContext = createContext({} as CartContext)
@@ -18,6 +24,9 @@ export function useCart() {
 
 export function CartProvider({ children }: CartProviderProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [cartItems, setCartItems] = useState<CartItem[]>([
+    { id: '0p0x1', amount: 2 },
+  ])
 
   const openCart = () => setIsOpen(true)
   const closeCart = () => setIsOpen(false)
@@ -27,6 +36,7 @@ export function CartProvider({ children }: CartProviderProps) {
       value={{
         openCart,
         closeCart,
+        cartItems,
       }}
     >
       {children}
