@@ -18,14 +18,16 @@ export function CartItem({ id, amount }: CartItemProps) {
 
       <div className="ms-auto">
         <h2 className="fs-6 m-0">{item.title}</h2>
-        <strong>${item.price}</strong>
-        {amount > 1 && (
-          <span>
-            <span className="text-muted"> x {amount} = </span>
-            <strong>${parseFloat(item.price) * amount}</strong>
-          </span>
-        )}
-        <div className="mt-1 text-center">
+        <div className="text-end">
+          <strong>${item.price}</strong>
+          {amount > 1 && (
+            <span>
+              <span className="text-muted"> x {amount} = </span>
+              <strong>${parseFloat(item.price) * amount}</strong>
+            </span>
+          )}
+        </div>
+        <div className="mt-1 text-end">
           <Button
             size="sm"
             className="py-0 px-2"
