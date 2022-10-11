@@ -21,7 +21,9 @@ export function Cart({ isOpen }: CartProps) {
   return (
     <Offcanvas show={isOpen} onHide={closeCart} placement={'end'}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Total: ${total}</Offcanvas.Title>
+        <Offcanvas.Title>
+          Total: <span className="fw-bolder fs-4">${total}</span>
+        </Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body className="border-top border-2">
         <Stack gap={3}>

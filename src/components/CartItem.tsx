@@ -1,4 +1,5 @@
 import { Image, Stack, Button } from 'react-bootstrap'
+import { useCart } from '../context/CartContext'
 import { shoes } from '../data/shoes'
 
 type CartItemProps = {
@@ -7,6 +8,7 @@ type CartItemProps = {
 }
 
 export function CartItem({ id, amount }: CartItemProps) {
+  const { addItem } = useCart()
   const item = shoes.find((item) => item.id === id)
   if (item == null) return null
 
@@ -17,7 +19,7 @@ export function CartItem({ id, amount }: CartItemProps) {
       <div className="ms-auto">
         <h2 className="fs-6 m-0">{item.title}</h2>
         <strong>${item.price}</strong>
-        {amount && (
+        {amount > 1 && (
           <span>
             <span className="text-muted"> x {amount} = </span>
             <strong>${parseFloat(item.price) * amount}</strong>
@@ -28,7 +30,12 @@ export function CartItem({ id, amount }: CartItemProps) {
             &#8211;
           </Button>
           <span> amount </span>
-          <Button size="sm" className="py-0 px-2" variant="outline-dark">
+          <Button
+            size="sm"
+            className="py-0 px-2"
+            variant="outline-dark"
+            onClick={() => addItem(id)}
+          >
             +
           </Button>
         </div>

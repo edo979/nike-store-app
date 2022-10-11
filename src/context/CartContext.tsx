@@ -34,7 +34,7 @@ export function CartProvider({ children }: CartProviderProps) {
     setCartItems((storeItems) => {
       if (storeItems.find((item) => item.id === id)) {
         return storeItems.map((item) => {
-          if (item.id === id) return { ...item, amount: item.amount++ }
+          if (item.id === id) return { ...item, amount: item.amount + 1 }
           return item
         })
       } else {
