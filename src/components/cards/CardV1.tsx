@@ -2,6 +2,7 @@ import { Card, Row, Col } from 'react-bootstrap'
 import { CardDetails } from './CardDetails'
 
 type CardV1Props = {
+  id: string
   title: string
   text: string
   rating: string
@@ -13,6 +14,7 @@ type CardV1Props = {
 }
 
 export function CardV1({
+  id,
   title,
   text,
   rating,
@@ -40,6 +42,7 @@ export function CardV1({
               <p className="mb-0 fs-6">{text}</p>
 
               <CardDetails
+                id={id}
                 price={price}
                 rating={rating}
                 btn={btn}

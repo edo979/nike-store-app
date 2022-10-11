@@ -2,14 +2,21 @@ import { Stack, Button } from 'react-bootstrap'
 import { useCart } from '../../context/CartContext'
 
 type CardDetailsProps = {
+  id: string
   price: string
   rating: string
   btn: string
   center: boolean
 }
 
-export function CardDetails({ price, rating, btn, center }: CardDetailsProps) {
-  const { openCart } = useCart()
+export function CardDetails({
+  id,
+  price,
+  rating,
+  btn,
+  center,
+}: CardDetailsProps) {
+  const { openCart, addItem } = useCart()
 
   return (
     <Stack
@@ -61,7 +68,12 @@ export function CardDetails({ price, rating, btn, center }: CardDetailsProps) {
           </svg>
         </Button>
 
-        <Button variant="light" size="sm" className="px-1 py-0 ">
+        <Button
+          variant="light"
+          size="sm"
+          className="px-1 py-0 "
+          onClick={() => addItem(id)}
+        >
           {btn}
         </Button>
       </Stack>
