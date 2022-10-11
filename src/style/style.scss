@@ -74,6 +74,30 @@
   }
 }
 
+.cart {
+  position: relative;
+
+  &-info {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    translate: -20%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+
+    font-size: 0.75rem;
+
+    color: $light;
+    background-color: $danger;
+    box-shadow: 0 0 5px hsl(0, 0%, 0%, 0.3);
+  }
+}
+
 header {
   position: relative;
 
