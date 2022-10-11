@@ -8,7 +8,7 @@ type CartItemProps = {
 }
 
 export function CartItem({ id, amount }: CartItemProps) {
-  const { addItem } = useCart()
+  const { addItem, removeItem } = useCart()
   const item = shoes.find((item) => item.id === id)
   if (item == null) return null
 
@@ -26,7 +26,12 @@ export function CartItem({ id, amount }: CartItemProps) {
           </span>
         )}
         <div className="mt-1 text-center">
-          <Button size="sm" className="py-0 px-2" variant="outline-dark">
+          <Button
+            size="sm"
+            className="py-0 px-2"
+            variant="outline-dark"
+            onClick={() => removeItem(id)}
+          >
             &#8211;
           </Button>
           <span> amount </span>
