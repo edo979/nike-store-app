@@ -1,4 +1,4 @@
-import { Col, Image, Offcanvas, Row, Stack } from 'react-bootstrap'
+import { Offcanvas, Stack } from 'react-bootstrap'
 import { useCart } from '../context/CartContext'
 import { shoes } from '../data/shoes'
 import { CartItem } from './CartItem'
@@ -25,7 +25,8 @@ export function Cart({ isOpen }: CartProps) {
           Total: <span className="fw-bolder fs-4">${total}</span>
         </Offcanvas.Title>
       </Offcanvas.Header>
-      <Offcanvas.Body className="border-top border-2">
+      <Offcanvas.Body className="border-top border-2 position-relative">
+        {total === 0 && <div className="offcanvas_bg-image"></div>}
         <Stack gap={3}>
           {cartItems.map((item) => (
             <CartItem key={item.id} {...item} />
