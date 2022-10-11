@@ -4,7 +4,7 @@ import { useScrollPosition } from '../hooks/useScrollPosition'
 
 export function MainNavigation() {
   const scrollPosition = useScrollPosition()
-  const { openCart } = useCart()
+  const { openCart, totalItems } = useCart()
 
   return (
     <Navbar expand="sm" fixed={scrollPosition > 30 ? 'top' : undefined}>
@@ -29,7 +29,7 @@ export function MainNavigation() {
           </Button>
 
           <div className="cart">
-            <div className="cart-info">1</div>
+            {totalItems > 0 && <div className="cart-info">{totalItems}</div>}
             <Button onClick={openCart}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

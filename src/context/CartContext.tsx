@@ -16,6 +16,7 @@ type CartContext = {
   cartItems: CartItem[]
   addItem: (id: string) => void
   removeItem: (id: string) => void
+  totalItems: number
 }
 
 const CartContext = createContext({} as CartContext)
@@ -43,7 +44,6 @@ export function CartProvider({ children }: CartProviderProps) {
       }
     })
   }
-
   const removeItem = (id: string): void => {
     setCartItems((storeItems) => {
       if (storeItems.find((item) => item.id === id && item.amount > 1)) {
@@ -56,6 +56,8 @@ export function CartProvider({ children }: CartProviderProps) {
     })
   }
 
+  const totalItems = cartItems.reduce((acc, item) => acc + item.amount, 0)
+
   return (
     <CartContext.Provider
       value={{
@@ -64,6 +66,7 @@ export function CartProvider({ children }: CartProviderProps) {
         cartItems,
         addItem,
         removeItem,
+        totalItems,
       }}
     >
       {children}
