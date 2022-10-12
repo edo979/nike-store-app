@@ -69,7 +69,7 @@ export function ProductPage() {
         </div>
       </div>
 
-      <div className="pb-5 row row-cols-xs-1 row-cols-sm-2 row-cols-lg-3 g-4 g-sm-3 g-md-4 ">
+      <div className="pb-5 row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4 g-sm-3 g-md-4 ">
         <CardV1List />
       </div>
     </main>
