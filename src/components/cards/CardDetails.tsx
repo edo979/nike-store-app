@@ -1,4 +1,5 @@
 import { Stack, Button } from 'react-bootstrap'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 
 type CardDetailsProps = {
@@ -17,6 +18,7 @@ export function CardDetails({
   center,
 }: CardDetailsProps) {
   const { openCart, addItem } = useCart()
+  const navigate = useNavigate()
 
   return (
     <Stack
@@ -50,7 +52,7 @@ export function CardDetails({
           variant="light"
           size="sm"
           className="py-0 px-0"
-          onClick={openCart}
+          onClick={() => navigate('products/' + id)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

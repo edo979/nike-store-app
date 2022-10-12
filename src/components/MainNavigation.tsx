@@ -1,4 +1,5 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useScrollPosition } from '../hooks/useScrollPosition'
 
@@ -9,9 +10,10 @@ export function MainNavigation() {
   return (
     <Navbar expand="sm" fixed={scrollPosition > 80 ? 'top' : undefined}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Link to={'/'} className="navbar-brand">
           <img src="/assets/logo.png" width={60} />
-        </Navbar.Brand>
+        </Link>
+
         <Navbar.Toggle aria-controls="navbar" />
         <Navbar.Collapse id="navbar">
           <Nav className="me-auto"></Nav>

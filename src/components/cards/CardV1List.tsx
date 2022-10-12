@@ -1,4 +1,5 @@
 import { Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { shoes } from '../../data/shoes'
 import { CardV1 } from './CardV1'
 
