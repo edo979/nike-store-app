@@ -1,4 +1,5 @@
 import { Button, Col, Container, Image, Row, Stack } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
 import { CardV2List } from '../components/cards/CardV2List'
 import { CarouselBs } from '../components/CarouselBs'
@@ -6,6 +7,8 @@ import { Jumbotron } from '../components/Jumbotron'
 import { homeArticles } from '../data/shoes'
 
 export function Home() {
+  const navigate = useNavigate()
+
   return (
     <>
       <header>
@@ -20,6 +23,7 @@ export function Home() {
               variant="light"
               size="lg"
               className="mx-auto shadow z-index-3"
+              onClick={() => navigate('/products/3')}
             >
               Explore product
             </Button>
