@@ -7,7 +7,7 @@ export function MainNavigation() {
   const { openCart, totalItems } = useCart()
 
   return (
-    <Navbar expand="sm" fixed={scrollPosition > 30 ? 'top' : undefined}>
+    <Navbar expand="sm" fixed={scrollPosition > 80 ? 'top' : undefined}>
       <Container>
         <Navbar.Brand href="#home">
           <img src="/assets/logo.png" width={60} />

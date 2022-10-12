@@ -39,6 +39,8 @@
 
 // 8. Add additional custom code here
 .navbar {
+  position: absolute;
+  width: 100%;
   top: 0.75rem;
   margin-bottom: 2rem;
   padding-block: 0;
@@ -56,6 +58,7 @@
   }
 
   &.fixed-top {
+    position: fixed;
     top: 0;
     padding-block: 1rem;
 
@@ -100,6 +103,8 @@
 
 header {
   position: relative;
+
+  padding-top: 50px;
 
   .clip-path {
     position: absolute;

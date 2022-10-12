@@ -1,17 +1,14 @@
 import { Button, Col, Container, Image, Row, Stack } from 'react-bootstrap'
-
 import { CardV1List } from '../components/cards/CardV1List'
 import { CardV2List } from '../components/cards/CardV2List'
 import { CarouselBs } from '../components/CarouselBs'
 import { Jumbotron } from '../components/Jumbotron'
-import { MainNavigation } from '../components/MainNavigation'
 import { homeArticles } from '../data/shoes'
 
 export function Home() {
   return (
     <>
       <header>
-        <MainNavigation />
         <div className="clip-path"></div>
 
         <Container className="hero | mt-5 pb-5">
