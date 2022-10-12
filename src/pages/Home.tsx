@@ -23,7 +23,7 @@ export function Home() {
               variant="light"
               size="lg"
               className="mx-auto shadow z-index-3"
-              onClick={() => navigate('/products/3')}
+              onClick={() => navigate('/products/0s0x1')}
             >
               Explore product
             </Button>

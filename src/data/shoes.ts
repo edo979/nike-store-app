@@ -25,6 +25,19 @@ export type News = {
 
 export const shoes: Shoe[] = [
   {
+    id: '0s0x1',
+    title: 'Electric Nike Adapt 2.0 Sneakers',
+    text: 'MEN Running Shoes',
+    rating: '4.9',
+    btn: 'Buy Now',
+    img: '/assets/hero.png',
+    price: '200',
+    color: 'from-blue-600 to-blue-500',
+    color1: 'hsl(225, 100%, 58%)',
+    color2: 'hsl(218, 90%, 59%)',
+    shadow: 'shadow-lg shadow-blue-500',
+  },
+  {
     id: '0p0x1',
     title: 'Nike Addapt BB 2.0',
     text: 'MEN Running Shoes',
