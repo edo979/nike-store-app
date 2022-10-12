@@ -52,7 +52,7 @@ export function CardDetails({
           variant="light"
           size="sm"
           className="py-0 px-0"
-          onClick={() => navigate('products/' + id)}
+          onClick={() => navigate(`/products/${id}`)}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
