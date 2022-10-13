@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
 import { shoes, Shoe } from '../data/shoes'
@@ -9,13 +9,19 @@ export function Search() {
   const navigate = useNavigate()
   const search = useRef<HTMLInputElement>(null)
   const [products, setProducts] = useState<Shoe[]>([])
+  const [isFindProduct, setIsFindProducts] = useState<boolean>(true)
 
   const searchProducts = (value: string): void => {
-    setProducts(
-      shoes.filter((products) =>
-        products.title.toLowerCase().includes(value.toLowerCase())
-      )
+    const productsFind = shoes.filter((products) =>
+      products.title.toLowerCase().includes(value.toLowerCase())
     )
+
+    if (productsFind.length === 0) {
+      setIsFindProducts(false)
+    } else {
+      setIsFindProducts(true)
+      setProducts(productsFind)
+    }
   }
 
   return (
@@ -52,25 +58,38 @@ export function Search() {
         </form>
       </section>
 
-      <section className="container my-4">
-        <h2>Results:</h2>
-        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
-          {products.map(({ id, title, img, text }) => (
-            <div className="col" key={id}>
-              <div className="card h-100">
-                <img src={img} className="card-img-top" alt={title} />
-                <div className="card-body d-flex flex-column">
-                  <h3 className="card-title fs-4">{title}</h3>
-                  <p className="card-text">{text}</p>
-                  <a href="#" className="btn btn-outline-dark mt-auto">
-                    View
-                  </a>
+      {isFindProduct ? (
+        <section className="my-4">
+          {products.length > 0 && <h2>Results:</h2>}
+          <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+            {products.map(({ id, title, img, text }) => (
+              <div className="col" key={id}>
+                <div className="card h-100">
+                  <img src={img} className="card-img-top" alt={title} />
+                  <div className="card-body d-flex flex-column">
+                    <h3 className="card-title fs-4 mt-auto">{title}</h3>
+                    <p className="card-text">{text}</p>
+                    <Link
+                      to={`/products/${id}`}
+                      className="btn btn-outline-dark"
+                    >
+                      View
+                    </Link>
+                  </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+      ) : (
+        <div className="row">
+          <div className="col">
+            <div className="alert alert-danger my-4 fs-3 text-center">
+              No results.
             </div>
-          ))}
+          </div>
         </div>
-      </section>
+      )}
 
       <div className="row my-2">
         <div className="col">
