@@ -52,10 +52,24 @@ export function Search() {
         </form>
       </section>
 
-      <section>
-        {products.map((product) => (
-          <p key={product.id}>{product.title}</p>
-        ))}
+      <section className="container my-4">
+        <h2>Results:</h2>
+        <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2">
+          {products.map(({ id, title, img, text }) => (
+            <div className="col" key={id}>
+              <div className="card h-100">
+                <img src={img} className="card-img-top" alt={title} />
+                <div className="card-body d-flex flex-column">
+                  <h3 className="card-title fs-4">{title}</h3>
+                  <p className="card-text">{text}</p>
+                  <a href="#" className="btn btn-outline-dark mt-auto">
+                    View
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
       <div className="row my-2">
