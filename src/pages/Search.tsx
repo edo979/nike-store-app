@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
@@ -6,6 +7,11 @@ import { shoes } from '../data/shoes'
 export function Search() {
   const { addItem } = useCart()
   const navigate = useNavigate()
+  const search = useRef<HTMLInputElement>(null)
+
+  const searchProducts = (value: string): void => {
+    console.log(value)
+  }
 
   return (
     <main className="product container">
@@ -18,40 +24,28 @@ export function Search() {
         }}
       ></div>
 
-      <div className="px-4 py-4 mt-5">
-        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div className="col-10 col-sm-8 col-lg-6 mx-auto">
-            {/* <img
-              src={product.img}
-              className="d-block mx-lg-auto img-fluid"
-              alt="Bootstrap Themes"
-              width="700"
-              height="500"
-              loading="lazy"
-            /> */}
-          </div>
-          <div className="col-lg-6">
-            {/* <h1 className="display-5 fw-bold lh-1 mb-3">{product.title}</h1>
-            <p className="lead">{product.text}</p> */}
-            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button
-                className="btn btn-outline-secondary d-flex gap-2 align-items-center"
-                onClick={() => navigate(-1)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  fill="currentColor"
-                  height={18}
-                >
-                  <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-                </svg>
-                Back
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <section className="row" style={{ marginTop: '100px' }}>
+        <form
+          className="d-flex"
+          role="search"
+          onSubmit={(e) => {
+            e.preventDefault()
+            if (search.current == null || search.current.value === '') return
+            searchProducts(search.current.value)
+          }}
+        >
+          <input
+            className="form-control form-control-lg px-2 me-2 w-100 "
+            type="search"
+            placeholder="Search..."
+            aria-label="Search"
+            ref={search}
+          />
+          <button className="btn btn-primary px-4" type="submit">
+            Search
+          </button>
+        </form>
+      </section>
 
       <div className="row my-2">
         <div className="col">
