@@ -35,10 +35,11 @@ export function ProductPage() {
           </div>
           <div className="col-lg-6">
             <h1 className="display-5 fw-bold lh-1 mb-3">{product.title}</h1>
-            <p className="lead">{product.text}</p>
+            <p className="lead m-0">{product.text}</p>{' '}
+            <p className="lead fw-bold">Price: ${product.price}</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
               <button
-                className="btn btn-outline-secondary d-flex gap-2 align-items-center"
+                className="btn btn-outline-secondary btn-lg d-flex gap-2 align-items-center "
                 onClick={() => navigate(-1)}
               >
                 <svg
