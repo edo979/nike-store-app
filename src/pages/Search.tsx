@@ -1,16 +1,21 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
-import { shoes } from '../data/shoes'
+import { shoes, Shoe } from '../data/shoes'
 
 export function Search() {
   const { addItem } = useCart()
   const navigate = useNavigate()
   const search = useRef<HTMLInputElement>(null)
+  const [products, setProducts] = useState<Shoe[]>([])
 
   const searchProducts = (value: string): void => {
-    console.log(value)
+    setProducts(
+      shoes.filter((products) =>
+        products.title.toLowerCase().includes(value.toLowerCase())
+      )
+    )
   }
 
   return (
@@ -45,6 +50,12 @@ export function Search() {
             Search
           </button>
         </form>
+      </section>
+
+      <section>
+        {products.map((product) => (
+          <p key={product.id}>{product.title}</p>
+        ))}
       </section>
 
       <div className="row my-2">
