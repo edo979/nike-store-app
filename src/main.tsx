@@ -6,16 +6,21 @@ import App from './App'
 import { Home } from './pages/Home'
 import { ProductPage } from './pages/ProductPage'
 import { Search } from './pages/Search'
+import { ErrorPage } from './pages/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <h1>Error page, not found!!!</h1>,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, element: <Home /> },
       { path: 'products/:id', element: <ProductPage /> },
-      { path: 'products/search', element: <Search /> },
+      {
+        path: 'products/search',
+        element: <Search />,
+        errorElement: <ErrorPage />,
+      },
     ],
   },
 ])

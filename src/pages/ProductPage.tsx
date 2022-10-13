@@ -1,5 +1,6 @@
 import { useLayoutEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { ButtonBack } from '../components/ButtonBack'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
 import { shoes } from '../data/shoes'
@@ -8,7 +9,6 @@ export function ProductPage() {
   const { id } = useParams()
   const product = shoes.find((i) => i.id === id)
   const { addItem } = useCart()
-  const navigate = useNavigate()
   if (product === undefined) return null
 
   useLayoutEffect(() => {
@@ -43,20 +43,7 @@ export function ProductPage() {
             <p className="lead m-0">{product.text}</p>{' '}
             <p className="lead fw-bold">Price: ${product.price}</p>
             <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-              <button
-                className="btn btn-outline-secondary btn-lg d-flex gap-2 align-items-center "
-                onClick={() => navigate(-1)}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  fill="currentColor"
-                  height={18}
-                >
-                  <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-                </svg>
-                Back
-              </button>
+              <ButtonBack />
               <button
                 type="button"
                 className="btn btn-primary btn-lg px-4"
