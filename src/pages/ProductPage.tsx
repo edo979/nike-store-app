@@ -1,3 +1,4 @@
+import { useLayoutEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
@@ -9,6 +10,10 @@ export function ProductPage() {
   const { addItem } = useCart()
   const navigate = useNavigate()
   if (product === undefined) return null
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <main className="product container">
