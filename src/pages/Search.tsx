@@ -1,12 +1,9 @@
-import { useRef, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useLayoutEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { CardV1List } from '../components/cards/CardV1List'
-import { useCart } from '../context/CartContext'
 import { shoes, Shoe } from '../data/shoes'
 
 export function Search() {
-  const { addItem } = useCart()
-  const navigate = useNavigate()
   const search = useRef<HTMLInputElement>(null)
   const [products, setProducts] = useState<Shoe[]>([])
   const [isFindProduct, setIsFindProducts] = useState<boolean>(true)
@@ -24,6 +21,10 @@ export function Search() {
     }
   }
 
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <main className="product container">
       <div
@@ -35,7 +36,7 @@ export function Search() {
         }}
       ></div>
 
-      <section className="row" style={{ marginTop: '100px' }}>
+      <section className="row" id="search" style={{ marginTop: '100px' }}>
         <form
           className="d-flex"
           role="search"
