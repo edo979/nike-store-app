@@ -1,11 +1,12 @@
 import { Button, Container, Nav, Navbar } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { useScrollPosition } from '../hooks/useScrollPosition'
 
 export function MainNavigation() {
   const scrollPosition = useScrollPosition()
   const { openCart, totalItems } = useCart()
+  const navigate = useNavigate()
 
   return (
     <Navbar expand="sm" fixed={scrollPosition > 80 ? 'top' : undefined}>
@@ -18,7 +19,7 @@ export function MainNavigation() {
         <Navbar.Collapse id="navbar">
           <Nav className="me-auto"></Nav>
 
-          <Button>
+          <Button onClick={() => navigate('/products/search')}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="22"
