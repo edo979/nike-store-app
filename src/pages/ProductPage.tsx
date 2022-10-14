@@ -4,12 +4,13 @@ import { ButtonBack } from '../components/ButtonBack'
 import { CardV1List } from '../components/cards/CardV1List'
 import { useCart } from '../context/CartContext'
 import { shoes } from '../data/shoes'
+import { ErrorPage } from './ErrorPage'
 
 export function ProductPage() {
   const { id } = useParams()
   const product = shoes.find((i) => i.id === id)
   const { addItem } = useCart()
-  if (product === undefined) return null
+  if (product === undefined) return <ErrorPage />
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
